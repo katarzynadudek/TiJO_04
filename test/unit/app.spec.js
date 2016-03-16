@@ -35,4 +35,31 @@ describe('app', function () {
             expect(app.divide(101, 0)).toEqual(false);
         });
     });
+    describe('Area function', function () {
+        it('should calculate area of trapezoid', function () {
+            expect(app.areaOfTrapezoid(3,5,2)).toEqual(8);
+            expect(app.areaOfTrapezoid(5,15,2)).toEqual(20);
+        });
+        it('should return false when a is equal or less than 0', function () {
+            expect(app.areaOfTrapezoid(0, 6, 34)).toEqual(false);
+        });
+        it('should return false when b is equal or less than 0', function () {
+            expect(app.areaOfTrapezoid(2, 0, 4)).toEqual(false);
+        });
+        it('should return false when h is equal or less than 0', function () {
+            expect(app.areaOfTrapezoid(2, 5, 0)).toEqual(false);
+        });
+    });
+    describe('Descending function', function () {
+        it('should write descending numbers', function () {
+            expect(app.getDescendingNumbers(6,5)).toEqual("6 5");
+            expect(app.getDescendingNumbers(8,5)).toEqual("8 7 6 5");
+        });
+        it('should return false when typeof numberFrom is equal typeof numberTo', function () {
+            expect(app.getDescendingNumbers(5, [3,4])).toEqual(false);
+        });
+        it('should return false when numberFrom is smaller than numberTo', function () {
+            expect(app.getDescendingNumbers(5, 9)).toEqual(false);
+        });
+    });
 });
